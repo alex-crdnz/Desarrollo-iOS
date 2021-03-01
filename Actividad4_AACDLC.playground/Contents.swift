@@ -1,6 +1,7 @@
 import UIKit
 //ciclos y condicionales
 var datos = [3,6,9,2,4,1]
+print("Numeros menor a 5: ")
 for i in datos{
     if(i < 5){
         print(i)
