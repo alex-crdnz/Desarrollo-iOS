@@ -2,7 +2,7 @@ import UIKit
 
 //clases
 class Persona{
-    func salludar(nombre:String) -> String {
+    func saludar(nombre:String) -> String {
         return "\(nombre) Mucho gusto"
     }
     func caminar(pasos:Int) -> String {
@@ -24,11 +24,14 @@ struct Pantalla{
         self.alto = alto
         self.ancho = ancho
     }
+    func resolucion() -> (Int, Int){
+        return (self.ancho, self.alto)
+    }
 }
 //Extensiones
 extension Int{
     var horas:Int {
-        return self*24*60
+        return self*60*60
     }
 }
 extension String{
@@ -55,4 +58,27 @@ extension String{
         return dia
     }
 }
-//
+//Opcional
+var opcional:Int?
+let dias = ["GDL":120,"PUE":300,"MYT":100,"CDMX":200]
+opcional = dias["DF"]
+
+//codigo
+var humano = Persona()
+print(humano.saludar(nombre: "Andres"))
+print(humano.caminar(pasos: 15))
+
+var resolucion = Pantalla(ancho: 1920, alto: 1080)
+print("Resolucion \(resolucion.resolucion())")
+
+var h = 25
+var d = "Jueves"
+print("\(h) horas tiene \(h.horas) segundos")
+print("\(d) es el dia numero \(d.dia())")
+
+if opcional == nil {
+    print("No exite 'DF' en la coleccion dias")
+}
+else {
+    print("El numero de 'DF' es \(opcional)")
+}
